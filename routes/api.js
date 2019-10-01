@@ -4,8 +4,9 @@ var blogCtrl = require('../controllers/blog')
 
 /* GET /api/blog */
 router.get('/posts', blogCtrl.getAllPosts)
-router.put('/post/:id', blogCtrl.getOnePost)
+router.get('/post/:id', blogCtrl.getOnePost)
 router.post('/post', blogCtrl.createPost)
+router.put('/post/edit/:id', blogCtrl.edit)
 router.delete('/post/:id', blogCtrl.deletePost)
 
 module.exports = router
