@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 var bodyParser = require('body-parser')
 
 require('./config/database');
@@ -12,6 +13,7 @@ var apiRouter = require('./routes/api');
 
 var app = express();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(logger('dev'));
 app.use(express.json());
